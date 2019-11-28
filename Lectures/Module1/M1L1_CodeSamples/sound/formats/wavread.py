@@ -1,0 +1,3 @@
+def read(inp):
+	return
+

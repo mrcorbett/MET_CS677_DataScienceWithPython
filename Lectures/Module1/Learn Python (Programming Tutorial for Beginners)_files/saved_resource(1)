@@ -1,0 +1,32 @@
+
+var ftGUID_3954055="4264FA40CC607B";
+var ftConfID_3954055="16465605";
+var ftParams_3954055="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=www.programiz.com&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.programiz.com%2Fpython-programming&cachebuster=655715.5888430899";
+var ftKeyword_3954055="";
+var ftCustom_3954055="";
+var ftSection_3954055="";
+var ftSegment_3954055="x2e,w2b,xtx,xtw,n7h";
+var ftSegmentList_3954055=[{m:'c12345_XM_SUB_NONSUB',s:'x2e'},{s:'w2b'},{s:'xtx'},{s:'xtw'},{s:'n7h'}];
+var ftRuleMatch_3954055="0";
+var ftTimestamp_3954055="1568157033";
+var ftGeoC2_3954055="us";
+var ftGeoState_3954055="ma";
+var ftGeoCity_3954055="lexington";
+var ftISP_3954055="comcast cable communications inc.";
+var ftSpeed_3954055="cable";
+var ftDMA_3954055="506";
+var ftLong_3954055="-71.2338";
+var ftLat_3954055="42.4484";
+var ftPostal_3954055="02421";
+var ftTimeZone_3954055="-400";
+var ftMobileCarrier_3954055="";
+var ftImp3954055 = {};
+ftImp3954055.privacy = "x";
+ftImp3954055.guidAge = "6";
+ftImp3954055.impID = "0DF6235F-2896-7013-38EE-B8A3313E0D5F";
+ftImp3954055.duid = "FT:4264FA40CC607B";
+
+ftImp3954055.ft_tpplid = "";
+ftImp3954055.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/395/3954055/2743679/js/j-3954055-2743679.js" id="ftscript_m3954055" name="ftscript_m3954055"></scr'+'ipt>');

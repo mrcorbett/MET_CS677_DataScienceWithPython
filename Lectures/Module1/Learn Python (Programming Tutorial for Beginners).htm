@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.programiz.com/python-programming -->
+<html class="no-js js" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.programiz.com/">
+<!--[if IE 9]>
+<link rel="prefetch" href="//cdn.programiz.com" />
+<![endif]-->
+<link rel="shortcut icon" href="https://cdn.programiz.com/sites/tutorial2program/files/programiz-favicon_3.png" type="image/png">
+<meta name="description" content="This is a comprehensive guide on how to get started in Python, why you should learn it and how you can learn it.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.programiz.com/python-programming">
+<link rel="shortlink" href="https://www.programiz.com/node/490">
+<script src="./Learn Python (Programming Tutorial for Beginners)_files/osd.js"></script><script src="./Learn Python (Programming Tutorial for Beginners)_files/pubads_impl_rendering_2019082901.js"></script><script type="text/javascript" async="" src="./Learn Python (Programming Tutorial for Beginners)_files/mixpanel-2-latest.min.js"></script><script async="" src="./Learn Python (Programming Tutorial for Beginners)_files/analytics.js"></script><script async="" src="./Learn Python (Programming Tutorial for Beginners)_files/apstag.js"></script><script src="./Learn Python (Programming Tutorial for Beginners)_files/inferredEvents.js" async=""></script><script src="./Learn Python (Programming Tutorial for Beginners)_files/123000288571689" async=""></script><script async="" src="./Learn Python (Programming Tutorial for Beginners)_files/fbevents.js"></script><script async="" src="./Learn Python (Programming Tutorial for Beginners)_files/gtm.js"></script><script src="./Learn Python (Programming Tutorial for Beginners)_files/cmp.js" async="" type="text/javascript"></script><script type="text/javascript" async="true">var elem=document.createElement("script");elem.src="https://quantcast.mgr.consensu.org/cmp.js";elem.async=!0;elem.type="text/javascript";var scpt=document.getElementsByTagName("script")[0];scpt.parentNode.insertBefore(elem,scpt);(function(){function d(){if(!window.frames.__cmpLocator)if(document.body){var b=document.body,a=document.createElement("iframe");a.style="display:none";a.name="__cmpLocator";b.appendChild(a)}else setTimeout(d,5)}function c(b){var a="string"===typeof b.data,c=a?-1!=b.data.indexOf("__cmpCall")?JSON.parse(b.data):{}:b.data;if(c.__cmpCall){var e=c.__cmpCall;window.__cmp(e.command,e.parameter,function(c,d){var f={__cmpReturn:{returnValue:c,success:d,callId:e.callId}};b.source.postMessage(a?JSON.stringify(f):f,"*")})}}d();window.__cmp=function(b){var a=arguments;if(a.length)if("ping"===a[0])a[2]({gdprAppliesGlobally:!1,cmpLoaded:!1},!0);else{if("__cmp"==b)return!1;"undefined"===typeof __cmp.a&&(__cmp.a=[]);__cmp.a.push([].slice.apply(a))}else return __cmp.a};window.__cmp.gdprAppliesGlobally=!1;window.__cmp.msgHandler=c;window.addEventListener?window.addEventListener("message",c,!1):window.attachEvent("onmessage",c)})();window.__cmp("init",{Language:"en","Initial Screen Reject Button Text":"I do not accept","Initial Screen Accept Button Text":"I accept","Purpose Screen Header Title Text":"Privacy settings","Purpose Screen Body Text":"You can set your consent preferences and determine how you want your data to be used based on the purposes below. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data.","Vendor Screen Body Text":"You can set consent preferences for each individual third-party company below. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may disclose that they use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policies for more information and to opt out.","Vendor Screen Accept All Button Text":"Accept all","Vendor Screen Reject All Button Text":"Reject all","Initial Screen Body Text":"We and our partners use technology such as cookies on our site to personalise content and ads, provide social media features, and analyse our traffic. Click below to consent to the use of this technology across the web. You can change your mind and change your consent choices at anytime by returning to this site.","Initial Screen Body Text Option":1,"Publisher Name":"Programiz","Publisher Logo":"https://www.programiz.com/sites/all/themes/Ultimate/img/programiz-mobile-logo.png","Min Days Between UI Displays":10,"Consent Scope":"service","No Option":!1,"Default Value for Toggles":"on"});</script><style>.qc-cmp-publisher-logo,.qc-cmp-ui-content{padding-top:15px!important}.qc-cmp-publisher-logo{max-width:291px!important}.qc-cmp-alt-buttons,.qc-cmp-ui-content{padding-bottom:30px!important}.qc-cmp-title{font-size:28px!important}.qc-cmp-link-text,.qc-cmp-qc-link{display:none!important}</style>
+<script src="./Learn Python (Programming Tutorial for Beginners)_files/datacamp.js"></script><style type="text/css">div.datacamp-exercise {  margin: 0;  border: 1px solid #d5eaef;  background: none;  position: relative;  min-height: 300px;  color: black;  box-shadow: none;}div[data-datacamp-exercise] {  margin: 0;  border: 1px solid #d5eaef;  background: #fff url(https://cdn.datacamp.com/spinner.gif) no-repeat center center !important;  background-size: auto 80px !important;  position: relative;  min-height: 300px;  color: transparent;  box-shadow: none;}div[data-datacamp-exercise] > code,div[data-datacamp-exercise] > div,div[data-datacamp-exercise] > p {  display: none;}div.powered-by-datacamp {  margin: 5px 0;  display: block;}div.powered-by-datacamp a {font-family: "Open Sans", sans-serif;  text-decoration: none;  border: 0;  color: #3ac;  font-size: 14px;}div.powered-by-datacamp .logo {  vertical-align: sub;  display: inline-block;  background: url("https://cdn.datacamp.com/dcl/assets/images/logo_blue.svg") no-repeat center center;  background-size: contain;  height: 27px;  width: 23px;  margin-left: 4px;}</style><link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/style-b5d7fbe3f1.css"><link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/font-awesome.min.css">
+<meta name="google-site-verification" content="17JZPeRuYVi-HGRJIG06Wx4uVrQSGPSGk7RLbZ7LaTA">
+<meta name="msvalidate.01" content="AC4EA77B0980B7169F9EEC142ADCC15B">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKXT7MH');</script>
+<!-- End Google Tag Manager -->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '123000288571689');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=123000288571689&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/Programizcom.min.js"></script>
+ 
+<script async="async" src="./Learn Python (Programming Tutorial for Beginners)_files/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+ 
+<script>
+var slot34657,slot35070,slot35090,slot35091,slot34653,slot34981,slot35072;
+ 
+googletag.cmd.push(function() {
+    if (window.innerWidth >= 900) {
+        var slot34660 = googletag.defineSlot('/8095840/.2_A.34660.4_Programiz.com_tier1', [[300, 250]], 'div-gpt-ad-1527670429257-1').addService(googletag.pubads());
+        var slot34978 = googletag.defineSlot('/8095840/.2_A.34978.2_Programiz.com_tier1', [160, 600], 'div-gpt-ad-1542359629025-0').addService(googletag.pubads());
+        var slot34979 = googletag.defineSlot('/8095840/.2_A.34979.3_Programiz.com_tier1', [728, 90], 'div-gpt-ad-1538032408492-0').addService(googletag.pubads());
+        var slot35129 = googletag.defineSlot('/8095840/.2_A.35129.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-1544534151014-0').addService(googletag.pubads());
+        slot34657 = googletag.defineSlot('/8095840/.2_A.34657.4_Programiz.com_tier1', [[300, 250], [336, 280], [728, 90]], 'div-gpt-ad-1527670429257-0').addService(googletag.pubads());
+        slot35070 = googletag.defineSlot('/8095840/.2_A.35070.3_programiz.com_tier1', [728, 90], 'div-gpt-ad-programizcom35070').addService(googletag.pubads());
+        slot35090 = googletag.defineSlot('/8095840/.2_A.35090.4_Programiz.com_tier1', [[300, 250], [336, 280], [728, 90]], 'div-gpt-ad-Programizcom35090').addService(googletag.pubads());
+        slot35091 = googletag.defineSlot('/8095840/.2_A.35091.2_Programiz.com_tier1', [160, 600], 'div-gpt-ad-Programizcom35091').addService(googletag.pubads());
+    } else {
+        slot34653 = googletag.defineSlot('/8095840/.2_A.34653.4_Programiz.com_tier1', [[320, 50], [320, 100], [300, 250]], 'div-gpt-ad-1527670353707-0').addService(googletag.pubads());
+        slot34981 = googletag.defineSlot('/8095840/.2_A.34981.4_Programiz.com_tier1', [[320, 50], [320, 100], [300, 250]], 'div-gpt-ad-1538032408492-2').addService(googletag.pubads());
+        slot35072 = googletag.defineSlot('/8095840/.2_A.35072.4_Programiz.com_tier1', [[320, 50], [320, 100], [300, 250]], 'div-gpt-ad-Programizcom35072').addService(googletag.pubads());
+    }
+    
+var refreshSlots = [slot34660, slot34978, slot34979, slot35129];
+  setInterval(function RefreshBids() {
+        console.log('Refresh Bids Initialized');
+        pbjs.que.push(function() {
+             pbjs.requestBids({
+                  timeout: PREBID_TIMEOUT,
+                  adUnitCodes: ['div-gpt-ad-1527670429257-1','div-gpt-ad-1542359629025-0','div-gpt-ad-1538032408492-0','div-gpt-ad-1544534151014-0'],
+                  bidsBackHandler: function() {
+                        console.log('RefreshBids.bidsBackHandler',refreshSlots);
+                        pbjs.setTargetingForGPTAsync(['div-gpt-ad-1527670429257-1','div-gpt-ad-1542359629025-0','div-gpt-ad-1538032408492-0','div-gpt-ad-1544534151014-0']);
+                         }
+            })
+        }),
+        apstag.fetchBids({ 
+            slots: [{
+                slotID: 'div-gpt-ad-1527670429257-1',
+                slotName: '/8095840/.2_A.34660.4_Programiz.com_tier1',
+                sizes: [[300,250]]
+            }, {
+                slotID: 'div-gpt-ad-1542359629025-0',
+                slotName: '/8095840/.2_A.34978.2_Programiz.com_tier1',
+                sizes: [[160, 600]]
+            }, {
+                slotID: 'div-gpt-ad-1538032408492-0',
+                slotName: '/8095840/.2_A.34979.3_Programiz.com_tier1',
+                sizes: [[728,90]]
+            }, {
+                slotID: 'div-gpt-ad-1544534151014-0',
+                slotName: '/8095840/.2_A.35129.4_Programiz.com_tier1',
+                sizes: [[300,250]]
+            }],
+            timeout: PREBID_TIMEOUT,
+        }, function (bids) {
+            apstag.setDisplayBids();    
+        }),                     
+                        console.log('Refresh Ads');
+                        googletag.pubads().refresh(refreshSlots);
+ 
+}, 90000);
+  googletag.enableServices();
+});
+</script>
+  <title>Learn Python (Programming Tutorial for Beginners)</title>
+  <link href="./Learn Python (Programming Tutorial for Beginners)_files/css" rel="stylesheet">
+  <link href="./Learn Python (Programming Tutorial for Beginners)_files/icon" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_WSgzCiaLFuERen0TMp4LzgnjcxS3tn-QyZRD85wZ2cs.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_3I03pJits2CKnSomFtyZgUmNkiDHMl2HjyoOrdsGu_8.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_VWGhZkkR4B4tMJA7PC_wov8dAxaI-MS03BCM3K8jjJA.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_36JbTIbHkX9TeP0yu3dTHrOHbHF-6-_qVnhNK0wAa7k.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_pUeG4AqgxcBnGK6VRB-dP7YzTQUuVS-sFW9sZ5rTCQI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_f2StEC--OOcKuRhZd41gII4Bn9NL1sQaMhyTAAs2fDY.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Learn Python (Programming Tutorial for Beginners)_files/css_5aQvY9eDN5XIiayMtb_05FejVu1px73z0dS0wFjNJKo.css" media="all">
+  <script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/jquery.min.js"></script><link rel="preload" href="./Learn Python (Programming Tutorial for Beginners)_files/f.txt" as="script"><script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/f.txt"></script><script src="./Learn Python (Programming Tutorial for Beginners)_files/pubads_impl_2019082901.js" async=""></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_vSmhpx_T-AShyt_WMW5_TcwwxJP1imoVOa8jvwL_mxE.js"></script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/jquery-ui.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_Xdog1yvbsHUl33-wo9ctRnQMgE_3uBBG15y3yJm_2eY.js"></script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_6mtNsXgWzNZac4UBJK9kpj3XdXTz7NcBgjY5eMSdK94.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-36675496-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_wM3ZVQV_RMgznHQKpN4op7713uyo_WqRmvODZE-pr1E.js"></script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_An83kp5qvYzPQgtBvtgvbB70eaYKP1bt_TPnwtedBzc.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"python","theme_token":"Ibh_al90Mu-IrecS2kyY_itGNHHYUCkD01VWuSnT9KE","js":{"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"1":1,"sites\/all\/modules\/codefilter\/codefilter.js":1,"sites\/all\/modules\/search_autocomplete\/js\/jquery.autocomplete.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/Ultimate\/js\/toc.js":1,"sites\/all\/themes\/Ultimate\/js\/plugins.js":1,"sites\/all\/themes\/Ultimate\/js\/main.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.menu.css":1,"misc\/ui\/jquery.ui.autocomplete.css":1,"sites\/all\/modules\/codefilter\/codefilter.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/meta_description_edit\/main.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/search_autocomplete\/css\/themes\/basic-blue.css":1,"sites\/all\/themes\/Ultimate\/css\/title-page.css":1,"sites\/all\/themes\/Ultimate\/css\/normalize.css":1,"sites\/all\/themes\/Ultimate\/css\/main.css":1,"sites\/all\/themes\/Python\/python.css":1,"sites\/all\/modules\/prettify\/styles\/stackoverflow.css":1}},"prettify":{"linenums":true,"match":"","nocode":"nocode","custom":[],"markup":{"precode":true,"code":false,"pre":false}},"search_autocomplete":{"form6":{"selector":"#search-api-page-search-form[action=\u0022\/searchh\u0022] #edit-keys-2","minChars":"3","max_sug":"10","type":"internal","datas":"https:\/\/www.programiz.com\/search_autocomplete\/autocomplete\/6\/","fid":"6","theme":"basic-blue","auto_submit":"0","auto_redirect":"0"},"form7":{"selector":"#search-api-page-search-form-simplest-programming-tutorials-f #edit-keys-2","minChars":"3","max_sug":"10","type":"internal","datas":"https:\/\/www.programiz.com\/search_autocomplete\/autocomplete\/7\/","fid":"7","theme":"basic-blue","auto_submit":"1","auto_redirect":"1"}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/python-programming":true}});
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/ml_jQuery.inputmask.bundle.min.js"></script><style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}</style><style>.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);}.ace_editor.ace_autocomplete .ace_line-hover {    position: absolute;    z-index: 2;}.ace_editor.ace_autocomplete .ace_scroller {   background: none;   border: none;   box-shadow: none;}.ace_rightAlignedText {    color: gray;    display: inline-block;    position: absolute;    right: 4px;    text-align: right;    z-index: -1;}.ace_type {    display: inline-block;    width: 18px;    text-align: left;    z-index: -1;    background-position: 2px center;    background-repeat: no-repeat;}.ace_packageType {    background-image: url("data:image/png;base64,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");}.ace_functionType, .ace_numericType, .ace_character {    background-image: url("data:image/png;base64,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");}.ace_listType {    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAN1wAADdcBQiibeAAAActpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+d3d3Lmlua3NjYXBlLm9yZzwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KGMtVWAAAAQZJREFUGBllkEFrwlAQhN+++B9KQRR77rFQsDmILy+3/rlC+zvEqxR6sEKhR89KVFB/Qg7x9ZuYS3FhMrOz67iJlWX5eqHMLDVNk4m997J8SsmyLGvEeL5HzTGcigXHssNvNUut1owg16vr+sTCrwyGj+gz8gju6e/o193syRVFMVOjQr+BvNO5+nZwnc0sxrhHfwKC0hjegS0YgQHJK9hAcCGEOaItkt554akasfrrhE32jMeeXy8wE3gBFf+wxVPyEHwDw4uOM/4l0weG8gPJH9Iq7RmGblyQlPh0OVzRb8ADaUM+4xLWzfHm5inFwIlvbsY4MPtSMvWMPsAVve7twz9d8uQP1IGHz+vPIGMAAAAASUVORK5CYII=");}.ace_environmentType {    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAEDWlDQ1BJQ0MgUHJvZmlsZQAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VVBg/m8AAADYSURBVBgZY0wrf/qfAQ38+/fPe0637DY0YQYWdAEQn5GJqWnRvjwGRkaGJiBXHYhv/v/PUIdVsbDoHS1GJsatII1QYAzUuJUJxkOmFTUO/UPmw9hYFXNyv8UqzgLyjOTXLxMUP7xV4vr1k+EfI9O9/7clGf6pPVOFmQijWVzvXWdgYmCCSzD//6vKsNOY4RfbH4Z/Cq9g6sA0EyMDE8jHGIBtl+Fthv//zwLxFxD9/99/b1BogIIGA/z/ySYZ6zhJDVkC5JGbyAJIbAxxpv8M/+qQFMCZ2MQBXc5F2uk3ZWcAAAAASUVORK5CYII=");}.ace_S3GenericType {    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAEDWlDQ1BJQ0MgUHJvZmlsZQAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VVBg/m8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAFZaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA1LjQuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIj4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CkzCJ1kAAAFNSURBVBgZY2CAACYozQikjaBsEMXE8P8/SAwOmGGsGY0qlWfXGH2aUquZAhMD0fwp2a6iWaUSIBP/ggSmVCvVhbiKtumosvCyMFxXB4mBgFhLTwa3p8+uf3wcHiArOIEKS8M8xRt5uH4zrD8oc/DmD/fd5vKc96bffq5+2NCsnvfJo3VPshKjQSarWBvxZYuKsjGs33Wm59w7zyVayoLvOD7/PPWdg/Mdw63r84AKg4HqfgAxA8OECqWsWY0aM0DsNSuXBc+ZM8cMxEYHLCCBgo570xgYQoEevcHw5ct3AVZG1m9AYcbH/x9zyG6XZS33mr7mN8O31SA3g/B/IGBiZGT8t2DBArv/f/+HMzIz3vv26Zvyn13iQf+2cIlf4z8eBlQHBjBNYM78/vUCIEa2SEtRL8Om/wUMPQFgCXyEOUM0nyWbly5IzX+G/4wAN15vIyGHcNgAAAAASUVORK5CYII=");}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #000;    text-shadow: 0 0 0.01em;}.ace_editor.ace_autocomplete {    width: 280px;    z-index: 200000;    background: #fbfbfb;    color: #444;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;}</style><style id="ace-crimson-editor">.ace-crimson-editor .ace_gutter {background: #ebebeb;color: #333;overflow : hidden;}.ace-crimson-editor .ace_gutter-layer {width: 100%;text-align: right;}.ace-crimson-editor .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-crimson-editor {background-color: #FFFFFF;color: rgb(64, 64, 64);}.ace-crimson-editor .ace_cursor {color: black;}.ace-crimson-editor .ace_invisible {color: rgb(191, 191, 191);}.ace-crimson-editor .ace_identifier {color: black;}.ace-crimson-editor .ace_keyword {color: blue;}.ace-crimson-editor .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-crimson-editor .ace_constant.ace_language {color: rgb(255, 156, 0);}.ace-crimson-editor .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-crimson-editor .ace_invalid {text-decoration: line-through;color: rgb(224, 0, 0);}.ace-crimson-editor .ace_fold {}.ace-crimson-editor .ace_support.ace_function {color: rgb(192, 0, 0);}.ace-crimson-editor .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-crimson-editor .ace_support.ace_type,.ace-crimson-editor .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-crimson-editor .ace_keyword.ace_operator {color: rgb(49, 132, 149);}.ace-crimson-editor .ace_string {color: rgb(128, 0, 128);}.ace-crimson-editor .ace_comment {color: rgb(76, 136, 107);}.ace-crimson-editor .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-crimson-editor .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-crimson-editor .ace_constant.ace_numeric {color: rgb(0, 0, 64);}.ace-crimson-editor .ace_variable {color: rgb(0, 64, 128);}.ace-crimson-editor .ace_xml-pe {color: rgb(104, 104, 91);}.ace-crimson-editor .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-crimson-editor .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-crimson-editor .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-crimson-editor .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-crimson-editor .ace_marker-layer .ace_active-line {background: rgb(232, 242, 254);}.ace-crimson-editor .ace_gutter-active-line {background-color : #dcdcdc;}.ace-crimson-editor .ace_meta.ace_tag {color:rgb(28, 2, 255);}.ace-crimson-editor .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-crimson-editor .ace_string.ace_regex {color: rgb(192, 0, 192);}.ace-crimson-editor .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-crimson-editor */</style><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-35/html/container.html"></head>
+<body style="">
+          <div class="region region-after-body">
+    <div id="block-block-129" class="block block-block">
+
+    
+  <div class="content">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKXT7MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->  </div>
+</div>
+  </div>
+
+<div id="programiz-header" class="nav-down clearfix">
+    <header class="header-wrapper">
+        <div class="logo-header-wrapper header-one-column clearfix">
+
+                            <div class="logo">
+                    <a href="https://www.programiz.com/" title="Programiz Home"><img src="./Learn Python (Programming Tutorial for Beginners)_files/programiz-mobile-logo.png" alt="Programiz"></a>
+                </div>
+
+                <div class="secondary-nav">
+                    <ul>
+                        <li><a href="https://www.programiz.com/java-programming" title="Java Tutorial">Java</a></li>
+                        <li><a href="https://www.programiz.com/c-programming" title="C Tutorial">C Tutorial</a></li>
+                        <li><a href="https://www.programiz.com/cpp-programming" title="C++">C++</a></li>
+                        <li><a href="https://www.programiz.com/kotlin-programming" title="Kotlin Tutorial">Kotlin</a></li>
+                        <li><a href="https://www.programiz.com/swift-programming" title="Swift Tutorial">Swift</a></li>
+                        <li><a href="https://www.programiz.com/r-programming" title="R Tutorial">R Tutorial</a></li>
+                    </ul>
+                </div>
+
+            </div>
+                <div class="main-nav-wrapper menu-one-column clearfix">
+            <div>
+                                    <nav class="main-nav">
+                        <h2>MENU</h2>
+                        <ul>
+                            <li class="mobile-menu"><a class="material-icons" href="https://www.programiz.com/python-programming">menu</a></li>
+                            <!-- <li><a class="material-icons home-icon" title="Programiz Home" href="/">home</a></li> -->
+                            <li title="Python Tutorial"><a class="python current-main-nav" title="Python Tutorial" href="https://www.programiz.com/python-programming">Tutorial</a></li>
+                            <li><a class="python" title="Python Examples" href="https://www.programiz.com/python-programming/examples">Examples</a></li>
+                            <li class="python"><a title="Python Built-in Functions" href="https://www.programiz.com/python-programming/methods/built-in">Built-in Functions</a></li>
+                            <!-- <li class="desktop-only"><a class="python" title="Python Quiz" href="/python-programming/quiz">Quiz</a></li> -->
+                            <li class="desktop-only">
+                                <div style="position: relative;">
+                                    <a class="python nav-get-python-app" title="Learn Python App" href="https://www.programiz.com/learn-python?ref=get-app">Get App</a>
+                                    <div class="pulse"></div>
+                                    <div class="marker">
+                                        <div>
+                                        </div>
+                            </div></div></li>
+                        </ul>
+                    </nav>
+                                <div class="mobile-pulse-marker">
+                    <a href="https://www.programiz.com/learn-python?ref=get-app" class="material-icons nav-get-python-app">Get App</a>
+                    <div class="pulse"></div>
+                    <div class="marker"></div>
+                </div>
+                <a href="https://www.programiz.com/python-programming" class="material-icons search-icon">search</a>
+            </div>
+    </div></header>
+</div>
+<!-- programiz-header End -->
+    <div id="search-area" class="clearfix">
+        <span class="material-icons">close</span>
+          <div class="region region-search">
+    <div id="block-search-api-page-simplest-programming-tutorials-f" class="block block-search-api-page">
+
+    <h2>Beginner Friendly Tutorials for Programmers</h2>
+  
+  <div class="content">
+    <form action="https://www.programiz.com/python-programming" method="post" id="search-api-page-search-form-simplest-programming-tutorials-f" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-keys-2">
+  <label class="element-invisible" for="edit-keys-2">What do you want to learn today? </label>
+ <input placeholder="Example: Python list" type="text" id="edit-keys-2" name="keys_2" value="" size="15" maxlength="128" class="form-text form-autocomplete ui-autocomplete-processed ui-autocomplete-input" data-sa-theme="basic-blue" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" data-sa-theme="basic-blue" style="display: none;"></ul></div>
+<input type="hidden" name="id" value="2">
+<input type="submit" id="edit-submit-2" name="op" value="Go" class="form-submit"><input type="hidden" name="form_build_id" value="form-OIygN6mW4kyDCe4VNH2p2WceI1tFfstYi7vZ0kTmubY">
+<input type="hidden" name="form_id" value="search_api_page_search_form_simplest_programming_tutorials_f">
+</div></form>  </div>
+</div>
+  </div>
+    </div>
+
+
+
+<section id="title-page-wrapper" class="clearfix">
+            <div id="programiz-right-sidebar">
+            <div class="tutorial-toc">
+                <p class="tutorial-toc-label">Contents</p>
+                <ul>
+	<li><a href="https://www.programiz.com/python-programming#tutorial">Python Tutorials</a></li>
+	<li><a href="https://www.programiz.com/python-programming#what-is-python">About Python Programming</a></li>
+	<li><a href="https://www.programiz.com/python-programming#reasons-choose-python">Reasons to Learn Python</a></li>
+	<li><a href="https://www.programiz.com/python-programming#run-python-os">Run Python in Your Computer</a></li>
+	<li><a href="https://www.programiz.com/python-programming#first-python-program">Your First Python Program</a></li>
+	<li><a href="https://www.programiz.com/python-programming#python-books">Recommended Python Books</a></li>
+</ul>
+            </div>
+        </div>
+    
+    <div id="title-main-content">
+          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="title-introduction">
+	<div class="title-h1">
+		<h1> Learn Python Programming </h1><span> The Definitive Guide</span>
+	</div>
+	<div class="clearfix">
+					<div class="title-introduction-content">
+				<p>Python is a powerful multi-purpose programming language created by Guido van Rossum.</p>
+<p>It has simple easy-to-use syntax, making it the perfect language for someone trying to learn computer programming for the first time.</p>
+<p>This is a comprehensive guide on how to get started in Python, why you should learn it and how you can learn it.</p> <p>However, if you have knowledge of other programming languages and want to quickly get started with Python, visit <a href="https://www.programiz.com/python-programming/tutorial" title="Python Tutorial">Python tutorial</a> page.</p>
+
+<style>
+.python-landing-app-ad-wrapper {
+    padding: 12px 29px;
+    font-size: 0.92em;
+    line-height: 1.5;
+    border-radius: 6px;
+    padding-bottom: 28px;
+    margin-bottom: 25px;
+    border: 15px solid #F5F5F5;
+}
+
+.play-store-banner-landing, .app-store-banner-landing {
+    width: 132px;
+    display: inline-block;
+    text-indent: -9999em;
+}
+
+.play-store-banner-landing {
+    background: url(/sites/all/themes/marketing/images/Play-store.png) no-repeat;
+    background-size: contain;
+    height: 40px;
+}
+.python-landing-app-ad-wrapper a.app-store-banner-landing {
+    background: url(/sites/all/themes/marketing/images/App-store.svg) no-repeat;
+    background-size: contain;
+    margin-top: 15px;
+    height: 44px;
+}
+.python-landing-app-ad-wrapper p {
+   text-align: center;
+}
+.python-landing-app-ad-wrapper a {
+   display: block;
+   margin: 0 auto;
+}
+</style>
+<div class="python-landing-app-ad-wrapper">
+<p>Learn Python programming from the ease of your phone.</p>
+<a href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_source%3Dprogramiz-website%26utm_campaign%3Dprogramiz-python-landing" class="play-store-banner-landing">Download learn Python app on Android.</a>
+<a href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-python-landing&amp;mt=8" class="app-store-banner-landing">Download learn Python app on App Store.</a>
+</div>			</div>
+			</div>
+	<div>
+			</div>
+</div>
+
+<section class="title-link-section clearfix">
+			<h2 class="autoscroll" id="tutorial">Python Tutorials</h2>
+<hr>
+<section>
+	<h3>Introduction</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/first-program">Getting Started</a></li>
+		<li><a href="https://www.programiz.com/python-programming/keywords-identifier">Keywords &amp; Identifiers</a></li>
+		<li><a href="https://www.programiz.com/python-programming/statement-indentation-comments">Statements &amp; Comments</a></li>
+                <li><a href="https://www.programiz.com/python-programming/variables-constants-literals">Python Variables</a></li>
+		<li><a href="https://www.programiz.com/python-programming/variables-datatypes">Python Datatypes</a></li>
+                <li><a href="https://www.programiz.com/python-programming/type-conversion-and-casting">Python Type Conversion</a></li>
+		<li><a href="https://www.programiz.com/python-programming/input-output-import">Python I/O and Import</a></li>
+		<li><a href="https://www.programiz.com/python-programming/operators">Python Operators</a></li>
+		<li><a href="https://www.programiz.com/python-programming/namespace" title="Python Programming Namespace">Python Namespace</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Flow Control</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/if-elif-else" title="Python if, else and elif">Python if...else</a></li>
+		<li><a href="https://www.programiz.com/python-programming/for-loop" title="Python for Loop">Python for Loop</a></li>
+		<li><a href="https://www.programiz.com/python-programming/while-loop" title="Python while Loop">while Loop</a></li>
+		<li><a href="https://www.programiz.com/python-programming/break-continue" title="Python break and continue">break and continue</a></li>
+		<li><a href="https://www.programiz.com/python-programming/pass-statement" title="Python Pass Statement">Pass Statement</a></li>
+		<li><a href="https://www.programiz.com/python-programming/looping-technique" title="Looping Technique">Looping Technique</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Functions</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/function" title="Functions in Python Programming">Python Function</a></li>
+		<li><a href="https://www.programiz.com/python-programming/function-argument" title="Function Argument in Python">Function Argument</a></li>
+		<li><a href="https://www.programiz.com/python-programming/recursion" title="Recursive Function in Python">Python Recursion</a></li>
+		<li><a href="https://www.programiz.com/python-programming/anonymous-function" title="Anonymous Function in Python">Anonymous Function</a></li>
+                <li><a href="https://www.programiz.com/python-programming/global-local-nonlocal-variables" title="Global, Local and Nonlocal Variables">Python Global, Local and Nonlocal</a></li>
+                <li><a href="https://www.programiz.com/python-programming/global-keyword" title="Python Global Keyword">Python Global Keyword</a></li>
+		<li><a href="https://www.programiz.com/python-programming/modules" title="Modules in Python Programming">Python Modules</a></li>
+		<li><a href="https://www.programiz.com/python-programming/package" title="Package in Python Programming">Python Package</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Datatypes</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/numbers" title="Numbers in Python Programming">Python Numbers</a></li>
+		<li><a href="https://www.programiz.com/python-programming/list" title="List in Python Programming">Python List</a></li>
+		<li><a href="https://www.programiz.com/python-programming/tuple" title="Tuple in Python Programming">Python Tuple</a></li>
+		<li><a href="https://www.programiz.com/python-programming/string" title="String in Python Programming">Python String</a></li>
+		<li><a href="https://www.programiz.com/python-programming/set" title="Set in Python Programming">Python Set</a></li>
+		<li><a href="https://www.programiz.com/python-programming/dictionary" title="Dictionary in Python Programming">Python Dictionary</a></li>
+                <li><a href="https://www.programiz.com/python-programming/nested-dictionary" title="Nested Dictionary in Python Programming">Python Nested Dictionary</a></li>
+		<li><a href="https://www.programiz.com/python-programming/array" title="Python arrays">Python Arrays</a></li>
+		<li><a href="https://www.programiz.com/python-programming/matrix" title="Python matrix">Python Matrix</a></li>
+		<li><a href="https://www.programiz.com/python-programming/list-comprehension" title="Python list comprehension">List Comprehension</a></li>
+	</ul>
+</section>
+<section>
+	<h3>File Handling</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/file-operation">File Operation</a></li>
+		<li><a href="https://www.programiz.com/python-programming/directory">Python Directory</a></li>
+		<li><a href="https://www.programiz.com/python-programming/exceptions">Python Exception</a></li>
+		<li><a href="https://www.programiz.com/python-programming/exception-handling">Exception Handling</a></li>
+		<li><a href="https://www.programiz.com/python-programming/user-defined-exception">User-defined Exception</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Object &amp; Class</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/object-oriented-programming" title="Python Object Oriented Programming">Python OOP</a></li>
+		<li><a href="https://www.programiz.com/python-programming/class" title="Python Programming Class">Python Class</a></li>
+		<li><a href="https://www.programiz.com/python-programming/inheritance" title="Python Programming Inheritance">Python Inheritance</a></li>
+		<li><a href="https://www.programiz.com/python-programming/multiple-inheritance" title="Multiple Inheritance in Python">Multiple Inheritance</a></li>
+		<li><a href="https://www.programiz.com/python-programming/operator-overloading" title="Python Operator Overloading">Operator Overloading</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Additional Tutorials</h3>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/iterator">Iterators</a></li>
+		<li><a href="https://www.programiz.com/python-programming/generator">Generators</a></li>
+		<li><a href="https://www.programiz.com/python-programming/closure">Closures</a></li>
+		<li><a href="https://www.programiz.com/python-programming/decorator" title="Decorators in Python">Decorators</a></li>
+                <li><a href="https://www.programiz.com/python-programming/shallow-deep-copy" title="Python Shallow and Deep Copy">Shallow and Deep Copy</a></li> 
+                <li><a href="https://www.programiz.com/python-programming/property" title="Python property">@property</a></li>
+                <li><a href="https://www.programiz.com/python-programming/assert-statement" title="Python Assert Statement">Python Assert</a></li>
+	</ul>
+</section>
+
+<p>Get latest updates, articles and tutorials on Python programming.</p>
+<div class="in-page-form clearfix">
+	<div class="ml-subscribe-form ml-subscribe-form-1819301" id="mlb2-1819301">
+		<div class="ml-vertical-align-center">
+			<div class="subscribe-form ml-block-success" style="display:none">
+				<div class="form-section">
+					<p>You have successfully subscribed to our Python newsletter.</p>
+				</div>
+			</div>
+			<form action="https://app.mailerlite.com/webforms/submit/s8v2x9" class="ml-block-form" data-code="s8v2x9" data-id="84469" method="POST" target="_blank">
+				<div class="subscribe-form">
+					<div class="form-section">
+						<div class="form-group ml-field-email ml-validate-required ml-validate-email"><input name="fields[email]" placeholder="Enter Your Email" type="text" value=""><input name="ml-submit" type="hidden" value="1">
+						</div>
+					</div>
+					<input name="ml-submit" type="hidden" value="1"><button class="primary" type="submit">Subscribe</button><button class="loading" disabled="disabled" style="display: none;" type="button"><img height="20" src="./Learn Python (Programming Tutorial for Beginners)_files/rolling.gif" style="width: 20px; height: 20px;" width="20"></button>
+				</div>
+			</form>
+			<script>
+				function ml_webform_success_1819301() {
+					jQuery('.ml-subscribe-form-1819301 .ml-block-success').show();
+					jQuery('.ml-subscribe-form-1819301 .ml-block-form').hide();
+				};
+			</script>
+		</div>
+	</div>
+	<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/webforms.min.js"></script>
+</div>	</section>
+
+<div class="title-section">
+			<article>
+			<h2 class="autoscroll" id="what-is-python"> What is Python (Programming)? - The Basics </h2>
+			<p class="title-section-image"><img src="./Learn Python (Programming Tutorial for Beginners)_files/python-info.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Introduction to Python Programming"></p><p>
+					</p><div class="section-body"> <p>Before getting started, lets get familiarized with the language first.</p>
+
+<p>Python is a general-purpose language. It has wide range of applications from Web development (like: Django and Bottle), scientific and mathematical computing (Orange, SymPy, NumPy) to desktop graphical user Interfaces (Pygame, Panda3D).</p>
+
+<p>The syntax of the language is clean and length of the code is relatively short. It's fun to work in Python because it allows you to think about the problem rather than focusing on the syntax.</p>
+
+<p><strong>More information on Python Language:</strong></p>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="python-history">History of Python</h3>
+
+	<div style="display: none;">
+		<p>Python is a fairly old language created by Guido Van Rossum. The design began in the late 1980s and was first released in February 1991.</p>
+
+		<h4>Why Python was created?</h4>
+
+		<p>In late 1980s, Guido Van Rossum was working on the Amoeba distributed operating system group. He wanted to use an interpreted language like ABC (ABC has simple easy-to-understand syntax) that could access the Amoeba system calls. So, he decided to create a language that was extensible. This led to&nbsp;design of a new language which was later named Python.</p>
+
+		<h4>Why the name Python?</h4>
+
+		<p>No. It wasn't named after a dangerous snake. Rossum was fan of a comedy series from late seventies. The name "Python" was adopted from the same series "Monty Python's Flying Circus".</p>
+
+		<h4>Release Dates of Different Versions</h4>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Version</th>
+					<th>Release Data</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Python 1.0 (first standard release)<br>
+						Python 1.6 (Last minor version)</td>
+					<td>January 1994<br>
+						September 5, 2000</td>
+				</tr>
+				<tr>
+					<td>Python 2.0 (Introduced list comprehensions)<br>
+						Python 2.7 (Last minor version)</td>
+					<td>October 16, 2000<br>
+						July 3, 2010</td>
+				</tr>
+				<tr>
+					<td>Python 3.0 (Emphasis on removing duplicative constructs and module)<br>
+						Python 3.5 (Last updated version)</td>
+					<td>December 3, 2008<br>
+						September 13, 2015</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="python-features">Features of Python Programming</h3>
+
+	<div style="display: none;">
+		<ol>
+			<li><strong>A simple language which is easier to learn</strong><br>
+				Python has a very simple and elegant syntax. It's much easier to read and write Python programs compared to other languages like: C++, Java, C#. Python makes programming fun and allows you to focus on the solution rather than syntax.<br>
+				If you are a newbie, it's a great choice to start your journey with Python.</li>
+			<li><strong>Free and open-source</strong><br>
+				You can freely use and distribute Python, even for commercial use. Not only can you use and distribute softwares written in it, you can even make changes to the Python's source code.<br>
+				Python has a large community constantly improving it in each iteration.</li>
+			<li><strong>Portability</strong><br>
+				You can move Python programs from one platform to another, and run it without any changes.<br>
+				It runs seamlessly on almost all platforms including Windows, Mac OS X and Linux.</li>
+			<li><strong>Extensible and Embeddable</strong><br>
+				Suppose an application requires high performance. You can easily combine pieces of C/C++ or other languages with Python code.<br>
+				This will give your application high performance as well as scripting capabilities which other languages may not provide out of the box.</li>
+			<li><strong>A high-level, interpreted language</strong><br>
+				Unlike C/C++, you don't have to worry about daunting tasks like memory management, garbage collection and so on.<br>
+				Likewise, when you run Python code, it automatically converts your code to the language your computer understands. You don't need to worry about any lower-level operations.</li>
+			<li><strong>Large standard libraries to solve common tasks</strong><br>
+				Python has a number of standard libraries which makes life of a programmer much easier since you don't have to write all the code yourself. For example: Need to connect MySQL database on a Web server? You can use MySQLdb library using <code>import MySQLdb</code> .<br>
+				Standard libraries in Python are well tested and used by hundreds of people. So you can be sure that it won't break your application.</li>
+			<li><strong>Object-oriented</strong><br>
+				Everything in Python is an object. Object oriented programming (OOP) helps you solve a complex problem intuitively.<br>
+				With OOP, you are able to divide these complex problems into smaller sets by creating objects.</li>
+		</ol>
+	</div>
+</section>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="python-applications">Applications of Python</h3>
+
+	<div style="display: none;">
+		<p><strong>Web Applications</strong></p>
+
+		<p>You can create scalable Web Apps using frameworks and CMS (Content Management System) that are built on Python. Some of the popular platforms for creating Web Apps are: Django, Flask, Pyramid, Plone, Django CMS.</p>
+
+		<p>Sites like Mozilla, Reddit, Instagram and PBS are written in Python.</p>
+
+		<p><strong>Scientific and Numeric Computing</strong></p>
+
+		<p>There are numerous libraries available in Python for scientific and numeric computing. There are libraries like: SciPy and NumPy that are used in general purpose computing. And, there are specific libraries like: EarthPy for earth science, AstroPy for Astronomy and so on.</p>
+
+		<p>Also, the language is heavily used in machine learning, data mining and deep learning.</p>
+
+		<p><strong>Creating software Prototypes</strong></p>
+
+		<p>Python is slow compared to compiled languages like C++ and Java. It might not be a good choice if resources are limited and efficiency is a must.</p>
+
+		<p>However, Python is a great language for creating prototypes. For example: You can use Pygame (library for creating games) to create your game's prototype first. If you like the prototype, you can use language like C++ to create the actual game.</p>
+
+		<p><strong>Good Language to Teach Programming</strong></p>
+
+		<p>Python is used by many companies to teach programming to kids and newbies.</p>
+
+		<p>It is a good language with a lot of features and capabilities. Yet, it's one of the easiest language to learn because of its simple easy-to-use syntax.</p>
+	</div>
+</section>
+
+<p>&nbsp;</p>
+ </div>
+		</article>
+			<article>
+			<h2 class="autoscroll" id="reasons-choose-python"> Reasons to Choose Python as First Language </h2>
+			<p class="title-section-image"><img src="./Learn Python (Programming Tutorial for Beginners)_files/choose-python.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Why to learn Python?"></p><p>
+					</p><div class="section-body"> <ol>
+	<li><strong>Simple Elegant Syntax</strong><br>
+		<br>
+		Programming in Python is fun. It's easier to understand and write Python code. <strong>Why?</strong> The syntax feels natural. Take this source code for an example:
+		<pre>a = 2
+b = 3
+sum = a + b
+print(sum)</pre>
+		<br>
+		Even if you have never programmed before, you can easily guess that this program adds two numbers and prints it.</li>
+	<li><strong>Not overly strict</strong><br>
+		<br>
+		You don't need to define the type of a variable in Python. Also, it's not necessary to add semicolon at the end of the statement.<br>
+<style>
+#div-gpt-ad-1527670429257-0 {display:none; margin: 15px 0;}
+#div-gpt-ad-1527670353707-0 {display: block; margin: 25px 0;}
+@media(min-width: 900px) { #div-gpt-ad-1527670429257-0 {display: block;} #div-gpt-ad-1527670353707-0 {display: none;}}
+</style>
+
+<!-- /8095840/.2_A.34660.4_Programiz.com_tier1 -->
+<div id="div-gpt-ad-1527670429257-0" data-google-query-id="CMCb9JOwx-QCFQ8dwwodcO0ILg">
+
+<div id="google_ads_iframe_/8095840/.2_A.34657.4_Programiz.com_tier1_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="./Learn Python (Programming Tutorial for Beginners)_files/container.html" id="google_ads_iframe_/8095840/.2_A.34657.4_Programiz.com_tier1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+
+<div id="div-gpt-ad-1527670353707-0">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527670353707-0'); });
+</script>
+</div>
+		<br>
+		Python enforces you to follow good practices (like proper indentation). These small things can make learning much easier for beginners.</li>
+	<li><strong>Expressiveness of the language</strong><br>
+		<br>
+		Python allows you to write programs having greater functionality with fewer lines of code. Here's a link to the source code of <a href="http://pastebin.com/7LTkj2V5" rel="nofollow">Tic-tac-toe game</a> with a graphical interface and a smart computer opponent in less than 500 lines of code. This is just an example. You will be amazed how much you can do with Python once you learn the basics.</li>
+	<li><strong>Great Community and Support</strong><br>
+		<br>
+		Python has a large supporting community. There are numerous active forums online which can be handy if you are stuck. Some of them are:
+		<ul>
+			<li><a href="https://www.reddit.com/r/learnpython">Learn Python subreddit </a></li>
+			<li><a href="https://groups.google.com/forum/#!forum/comp.lang.python">Google Forum for Python</a></li>
+			<li><a href="http://stackoverflow.com/tags/python">Python Questions - Stack Overflow</a></li>
+		</ul>
+	</li>
+</ol>
+
+ </div>
+		</article>
+			<article>
+			<h2 class="autoscroll" id="run-python-os"> Run Python on Your Operating System </h2>
+			<p class="title-section-image"><img src="./Learn Python (Programming Tutorial for Beginners)_files/Run Python on your system.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Run Python on Your Operating System"></p><p>
+					</p><div class="section-body"> <p>You will find the easiest way to run Python on your computer (Windows, Mac OS X or Linux) in this section.</p>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="run-python-mac">Install and Run Python in Mac OS X</h3>
+
+	<div style="display: none;">
+		<ol>
+			<li>Go to <a href="https://www.python.org/downloads" title="Get Python for Mac">Download Python</a> page on the official site and click <strong>Download Python 3.6.0</strong>&nbsp;(You may see different version name).</li>
+			<li>When the download is complete, open the package and follow the instructions. You will see "The installation was successful" message when Python is successfully installed.</li>
+			<li>It's recommended to download a good text editor before you get started. If you are a beginner, I suggest you to <a href="https://www.sublimetext.com/2" title="Get Sublime Text 2">download Sublime Text</a>. It's free.</li>
+			<li>The installation process is straight forward. Run the Sublime Text Disk Image file you downloaded and follow the instructions.</li>
+			<li>Open Sublime Text and go to <strong>File &gt; New File</strong> (Shortcut: <strong>Cmd+N</strong>). Then, save (<strong>Cmd+S</strong> or <strong>File &gt; Save</strong>) the file with <strong>.py</strong> extension like: hello.py or first-program.py</li>
+			<li>Write the code and save it again. For starters, you can copy the code below:
+				<pre>print("Hello, World!")</pre>
+				This simple program outputs "Hello, World!"</li>
+			<li>Go to <strong>Tool &gt; Build</strong> (Shortcut: <strong>Cmd + B</strong>). You will see the output at the bottom of Sublime Text.Congratulations, you've successfully run your first Python program.</li>
+		</ol>
+	</div>
+</section>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="run-python-linux">Install and Run Python in Linux (Ubuntu)</h3>
+
+	<div style="display: none;">
+		<ol>
+			<li>Install the following dependencies:
+				<pre>$ sudo apt-get install build-essential checkinstall
+$ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev</pre>
+			</li>
+			<li>Go to <a href="https://www.python.org/downloads" title="Get Python for Linux">Download Python</a> page on the official site and click <strong>Download Python 3.6.0</strong>&nbsp;(You may see different version name).</li>
+			<li>In the terminal, go to the directory where the file is downloaded and run the command:
+				<pre>$ tar -xvf Python-3.6.0.tgz</pre>
+				This will extract your zipped file. <strong>Note: </strong>The filename will be different if you've downloaded a different version. Use the appropriate filename.</li>
+			<li>Go to the extracted directory.
+				<pre>$ cd Python-3.6.0</pre>
+			</li>
+			<li>Issue the following commands to compile Python source code on your Operating system.
+				<pre>$ ./configure
+$ make
+$ make install
+</pre>
+			</li>
+			<li>We recommend you to install Sublime Text if you are a newbie. To install Sublime Text in Ubuntu (on 14.04). Issue following commands.
+				<pre>$ sudo add-apt-repository -y ppa:webupd8team/sublime-text-2
+$ sudo apt-get update
+$ sudo apt-get install sublime-text</pre>
+			</li>
+			<li>Open Sublime text. To create a new file, go to <strong>File &gt; New File</strong> (Shortcut: <strong>Ctrl+N</strong>).</li>
+			<li>Save the file with <strong>.py</strong> file extension like: <strong>hello.py</strong> or <strong>first-program.py</strong></li>
+			<li>Write the code and save it (<strong>Ctrl+S</strong> or <strong>File &gt; Save</strong>) . For starters, you can copy the code below:
+				<pre>print("Hello, World!")</pre>
+				This simple program outputs "Hello, World!"</li>
+			<li>Go to <strong>Tool &gt; Build</strong> (Shortcut: <strong>Ctrl+B</strong>). You will see the output at the bottom of Sublime Text. Congratulations, you've successfully run your first Python program.</li>
+		</ol>
+	</div>
+</section>
+
+<section class="title-accordion-open">
+	<h3 class="autoscroll" id="run-python-windows">Install and Run Python in Windows</h3>
+
+	<div>
+		<ol>
+			<li>Go to <a href="https://www.python.org/downloads" title="Get Python for Mac">Download Python</a> page on the official site and click <strong>Download Python 3.6.0</strong>&nbsp;(You may see different version name).</li>
+			<li>When the download is completed, double-click the file and follow the instructions to install it.<br>
+				When Python is installed, a program called IDLE is also installed along with it. It provides graphical user interface to work with Python.</li>
+			<li>Open IDLE, copy the following code below and press enter.
+				<pre>print("Hello, World!")
+</pre>
+			</li>
+			<li>To create a file in IDLE, go to <strong>File &gt; New Window</strong> (Shortcut: <strong>Ctrl+N</strong>).</li>
+			<li>Write Python code (you can copy the code below for now) and save (Shortcut: <strong>Ctrl+S</strong>) with <strong>.py</strong> file extension like: hello.py or your-first-program.py
+				<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">print</span><span class="pun">(</span><span class="str">"Hello, World!"</span><span class="pun">)</span></code></li></ol></pre>
+			</li>
+			<li>Go to <strong>Run &gt; Run module</strong> (Shortcut: <strong>F5</strong>) and you can see the output. Congratulations, you've successfully run your first Python program.</li>
+		</ol>
+	</div>
+</section>
+
+<p>&nbsp;</p>
+ </div>
+		</article>
+			<article>
+			<h2 class="autoscroll" id="first-python-program"> Your First Python Program </h2>
+			<p class="title-section-image"><img src="./Learn Python (Programming Tutorial for Beginners)_files/first-python-program.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Learn to write a simple Python program"></p><p>
+					</p><div class="section-body"> <p>Often, a program called "Hello, World!" is used to introduce a new programming language to beginners. A "Hello, World!" is a simple program that outputs "Hello, World!".</p>
+
+ <style>
+#div-gpt-ad-Programizcom35090 {display:none; margin: 15px 0;}
+#div-gpt-ad-Programizcom35072 {display: block; margin: 25px 0;}
+@media(min-width: 900px) { #div-gpt-ad-Programizcom35090 {display: block;} #div-gpt-ad-Programizcom35072 {display: none;}}
+</style>
+
+<div id="div-gpt-ad-Programizcom35090" data-google-query-id="CP_l3pOwx-QCFcbC4QodWckCng">
+
+<div id="google_ads_iframe_/8095840/.2_A.35090.4_Programiz.com_tier1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/8095840/.2_A.35090.4_Programiz.com_tier1_0" title="3rd party ad content" name="google_ads_iframe_/8095840/.2_A.35090.4_Programiz.com_tier1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true" src="./Learn Python (Programming Tutorial for Beginners)_files/saved_resource.html"></iframe></div></div>
+
+<!-- /8095840/.2_A.35072.4_Programiz.com_tier1 -->
+<div id="div-gpt-ad-Programizcom35072">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom35072'); });
+</script>
+</div>
+
+<p>However, Python is one of the easiest language to learn, and creating "Hello, World!" program is as simple as writing <code>print("Hello, World!")</code>. So, we are going to write a different program.</p>
+
+<h4>Program to Add Two Numbers</h4>
+
+<div data-height="250" data-lang="python" class="datacamp-exercise ng-scope">
+	
+<!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]--><div ng-controller="NormalExerciseController" class="ng-scope"><div class="dcl-exercise-area" resize-layout=""><div class="dcl-left-pane dcl-mini" ng-class="{&#39;dcl-mini&#39;: useMiniLayout}"><ul class="dcl-content--tab"><li><a href="https://www.programiz.com/python-programming" ng-click="activateLeftTab(&#39;usercode&#39;)" ng-class="{&#39;dcl-active&#39;: isActiveLeftTab(&#39;usercode&#39;)}" class="ng-binding dcl-active">script.py</a></li><li ng-show="solutionTabShown" class="ng-hide"><a class="dcl-animation--flash ng-binding" href="https://www.programiz.com/python-programming" ng-click="activateLeftTab(&#39;solution&#39;)" ng-class="{&#39;dcl-active&#39;: isActiveLeftTab(&#39;solution&#39;)}">solution.py</a></li><li><a href="https://www.programiz.com/python-programming" ng-show="useMiniLayout" ng-click="activateLeftTab(&#39;console&#39;)" ng-class="{&#39;dcl-active&#39;: isActiveLeftTab(&#39;console&#39;)}" class="ng-binding">IPython Shell</a></li><li><a href="https://www.programiz.com/python-programming" ng-show="useMiniLayout &amp;&amp; plotTabShown" ng-click="activateLeftTab(&#39;plots&#39;)" ng-class="{&#39;dcl-active&#39;: isActiveLeftTab(&#39;plots&#39;)}" class="ng-hide">Plots</a></li></ul><div class="dcl-content--tab-body"><div code-editor="" control="editor" ng-show="isActiveLeftTab(&#39;usercode&#39;) || isActiveLeftTab(&#39;solution&#39;)" ng-model="userCode" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ace_editor ace-crimson-editor" style="font-size: 12.8px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; height: 16px; width: 7.68125px; left: 45px; top: 0px;"></textarea><div class="ace_gutter"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px; height: 257px; width: 41px;"><div class="ace_gutter-cell " style="height: 16px;">1</div><div class="ace_gutter-cell " style="height: 16px;">2</div><div class="ace_gutter-cell " style="height: 16px;">3</div><div class="ace_gutter-cell " style="height: 16px;">4</div><div class="ace_gutter-cell " style="height: 16px;">5</div></div><div class="ace_gutter-active-line" style="top: 0px; height: 16px;"></div></div><div class="ace_scroller" style="left: 41px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 675px; height: 257px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 618.5px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height:16px;top:0px;left:0;right:0;"></div></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line_group" style="height:16px"><div class="ace_line" style="height:16px"><span class="ace_comment"># Add two numbers</span></div></div><div class="ace_line_group" style="height:16px"><div class="ace_line" style="height:16px"><span class="ace_identifier">num1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">3</span></div></div><div class="ace_line_group" style="height:16px"><div class="ace_line" style="height:16px"><span class="ace_identifier">num2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">5</span></div></div><div class="ace_line_group" style="height:16px"><div class="ace_line" style="height:16px"><span class="ace_support ace_function">sum</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">num1</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">num2</span></div></div><div class="ace_line_group" style="height:16px"><div class="ace_line" style="height:16px"><span class="ace_keyword">print</span><span class="ace_paren ace_lparen">(</span><span class="ace_support ace_function">sum</span><span class="ace_paren ace_rparen">)</span></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 4px; top: 0px; width: 7.68125px; height: 16px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 80px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 41px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 675px;"></div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div><div ng-show="isActiveLeftTab(&#39;console&#39;)" class="dcl-console-target dcl-console-mini-target ng-hide"><console class="dcl-console ng-isolate-scope ace_editor ace-crimson-editor" style="font-size: 12.8px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; height: 16px; width: 7.68125px; left: 65.45px; top: 0px;"></textarea><div class="ace_gutter" style="display: none;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px;"></div><div class="ace_gutter-active-line" style="display: none;"></div></div><div class="ace_scroller" style="left: 0px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 353px; height: 257px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 618.5px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line_group" style="height:16px"><div class="ace_line" style="height:16px"><span class="ace_identifier">In [1]: </span><span class="ace_identifier"></span></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 65.45px; top: 0px; width: 7.68125px; height: 16px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 16px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 0px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 353px;"></div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></console></div><div ng-show="isActiveLeftTab(&#39;plots&#39;)" class="dcl-plots-mini-target ng-hide"><plots-container class="dcl-plots-container"><div class="dcl-plot"><img ng-show="plots.length &gt; 0" class="ng-hide"></div><div class="dcl-plot-actions"><button class="dcl-btn dcl-btn-small dcl-plot-btn" ng-click="removePlot()" ng-disabled="plots.length === 0" disabled="disabled"><i class="fa fa-trash"></i></button> <button class="dcl-btn dcl-btn-small dcl-plot-btn" ng-click="previousPlot()" ng-disabled="plotIndex &lt;= 0" disabled="disabled"><i class="fa fa-chevron-left"></i></button> <span ng-show="plots.length &gt; 0" class="ng-binding ng-hide">1/0</span> <span ng-hide="plots.length &gt; 0">0/0</span> <button class="dcl-btn dcl-btn-small dcl-plot-btn" ng-click="nextPlot()" ng-disabled="plotIndex &gt;= (plots.length - 1)" disabled="disabled"><i class="fa fa-chevron-right"></i></button> <button class="dcl-btn dcl-btn-small dcl-plot-btn" ng-click="expand(&#39;plot&#39;)" ng-disabled="plots.length === 0" disabled="disabled"><i class="fa fa-expand"></i></button></div></plots-container></div><div growl="" ng-show="!isActiveLeftTab(&#39;plots&#39;)" inline="true" limit-messages="1" sct-feedback="" class="sct-feedback-container ng-isolate-scope"><div class="growl-container bottom-left" ng-class="wrapperClasses()"><!-- ngRepeat: message in growlMessages.directives[referenceId].messages --></div></div></div></div><div ng-show="!useMiniLayout" class="dcl-right-pane clearfix ng-hide"><a class="dcl-github-link dcl-no-link-style" href="https://github.com/datacamp/datacamp-light" rel="nofollow" uib-tooltip="View DataCamp Light on Github" tooltip-placement="left" target="_blank"><div class="dcl-github-logo"></div></a><ul class="dcl-content--tab"><li><a href="https://www.programiz.com/python-programming" ng-click="activateRightTab(&#39;console&#39;)" ng-class="{&#39;dcl-active&#39;: isActiveRightTab(&#39;console&#39;)}" class="ng-binding dcl-active">IPython Shell</a></li><li><a ng-show="plotTabShown" href="https://www.programiz.com/python-programming" ng-click="activateRightTab(&#39;plots&#39;)" ng-class="{&#39;dcl-active&#39;: isActiveRightTab(&#39;plots&#39;)}" class="ng-hide">Plots</a></li></ul><div class="dcl-content--tab-body"><div ng-show="isActiveRightTab(&#39;console&#39;)" control="console" class="dcl-console-target dcl-console-full-target"></div><div ng-show="isActiveRightTab(&#39;plots&#39;)" class="dcl-plots-full-target ng-hide"></div></div></div></div><div class="dcl-action-panel clearfix" exercise="exercise"><button ng-show="hasHint()" class="dcl-btn dcl-btn-secondary dcl-btn-small ng-hide" href="" ng-click="showHint()" tooltip-placement="top" uib-tooltip="Get Hint">Hint</button> <button ng-show="solutionButtonShown" class="dcl-btn dcl-btn-secondary dcl-btn-small ng-hide" href="" ng-click="showSolutionTab()" tooltip-placement="top" uib-tooltip="Show Solution">Solution</button> <button class="dcl-btn dcl-btn-primary dcl-btn-small" href="" ng-click="execute()" submit-disable="" tooltip-placement="top" uib-tooltip="Execute Code">Run</button><span class="dcl-app-status"><i class="fa fa-circle dcl-broken" ng-hide="isLoading" ng-class="{&#39;dcl-busy&#39;: isBusy, &#39;dcl-broken&#39;: isBroken}"></i> <i class="dcl-app-status-spinner fa fa-circle-o-notch fa-spin ng-hide" ng-show="isLoading"></i> <span class="dcl-app-status-text dcl-hide-xxs ng-binding" style="display: none;">Session Inactive</span></span></div></div></div><div class="powered-by-datacamp"><a href="https://www.datacamp.com/" rel="nofollow">Powered by DataCamp<div class="logo"></div></a></div>
+
+<h4>How this program works?</h4>
+
+<p><b>Line 1:</b> # Add two numbers</p>
+
+<p>Any line starting with <strong><code>#</code></strong> in Python programming is a comment.</p>
+
+<p>Comments are used in programming to describe the purpose of the code. This helps you as well as other programmers to understand the intent of the code. Comments are completely ignored by compilers and interpreters.</p>
+
+<p><b>Line 2:</b> num1 = 3</p>
+
+<p>Here, <var>num1</var> is a variable. You can store a value in a variable. Here, 3 is stored in this variable.</p>
+
+<p><b>Line 3:</b> num2 = 5</p>
+
+<p>Similarly, 5 is stored in <var>num2</var> variable.</p>
+
+<p><b>Line 4:</b> sum = num1+num2</p>
+
+<p>The variables <var>num1</var> and <var>num2</var> are added using <strong>+</strong> operator. The result of addition is then stored in another variable <var>sum</var>.</p>
+
+<p><b>Line 5:</b> print(sum)</p>
+
+<p>The <code>print()</code> function prints the output to the screen. In our case, it prints 8 on the screen.</p>
+
+<h4>Few Important Things to Remember</h4>
+
+<p>To represent a statement in Python, newline (enter) is used. The use of semicolon at the end of the statement is optional (unlike languages like C/C++, PHP). In fact, it's recommended to omit semicolon at the end of the statement in Python.</p>
+
+<p>Instead of curly braces { }, indentations are used to represent a block.</p>
+
+<pre>   im_a_parent:
+    im_a_child:
+        im_a_grand_child
+    im_another_child:
+        im_another_grand_child
+</pre>
+ </div>
+		</article>
+			<article>
+			<h2 class="autoscroll" id="teach-yourself-python"> Teach Yourself to Code in Python </h2>
+			<p class="title-section-image"><img src="./Learn Python (Programming Tutorial for Beginners)_files/learn-python.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Learn Python Yourself"></p><p>
+					</p><div class="section-body"> <h4 class="autoscroll" id="learn-python-programiz">Learn Python from Programiz</h4>
+
+<p>Programiz offers dozens of <a href="https://www.programiz.com/python-programming#tutorial" title="Python tutorial">Python&nbsp;tutorials</a>&nbsp;and examples to help you learn Python programming from scratch.</p>
+
+<p>Our tutorials are designed for beginners who do not have any prior knowledge of Python (or, any other programming languages). Each tutorial is written in depth with examples and detailed explanation.</p>
+
+<p>We also encourage you to try our <a href="https://www.programiz.com/python-programming/examples" title="Python Examples">examples</a> and run it. Once you understand the program, modify it and try to create something new. This is the best way to learn programming.</p>
+
+<h4 class="autoscroll" id="python-books">Recommended Books</h4>
+
+<p>If you are serious about learning programming, you should get yourself a good book.</p>
+
+<p>Granted, reading a programming book takes a lot of time and patience. But, you will get the big picture of programming concepts in the book which you may not find elsewhere.</p>
+
+<div class="clearfix title-recommended-books">
+	<div class="book-content">
+		<h4>Think Python: How to Think Like a Computer Scientist</h4>
+
+		<p>If you have never programmed before, this book is for you. This book assumes that you have very little knowledge of programming and will provide everything you need to get started with Python.</p>
+
+		<p>Don't skip the exercises provided in each chapter.</p>
+	</div>
+
+	<div class="book-image">
+		<p><img alt="Think Python Book" src="./Learn Python (Programming Tutorial for Beginners)_files/think-python-book.jpg" style="width: 155px; height: 202px;" title="Think Python Book"></p>
+		<a class="button" href="http://amzn.to/2dVg5rG" rel="nofollow">Get this book</a></div>
+</div>
+
+<div class="clearfix title-recommended-books">
+	<div class="book-content">
+		<h4>Starting out With Python</h4>
+
+		<p>A well-written book with a lot of examples.</p>
+
+		<p>This book is easy to understand even for complete beginners. Since, the content is well organized, it's a good book to have for future reference.</p>
+	</div>
+
+	<div class="book-image">
+		<p><img alt="Starting out with Python" src="./Learn Python (Programming Tutorial for Beginners)_files/starting-out-with-python.jpg" style="width: 155px; height: 194px;" title="Starting out with Python"></p>
+		<a class="button" href="http://amzn.to/2diJu8Z" rel="nofollow">Get this book</a></div>
+</div>
+
+<div class="clearfix title-recommended-books">
+	<div class="book-content">
+		<h4>Effective Python: 59 Specific Ways to Write Better Python</h4>
+
+		<p>Python is easy to get started with. However, there are many awesome features you may not be aware of, and hidden pitfalls you want to avoid.</p>
+
+		<p>"Effective Python" helps you to utilize the power of Python in the right way. <b>Want to write robust, efficient and maintainable code in Python?</b> You should definitely give this book a try.</p>
+	</div>
+
+	<div class="book-image">
+		<p><img alt="Effective Python Book" src="./Learn Python (Programming Tutorial for Beginners)_files/effective-python-book.jpg" style="width: 155px; height: 239px;" title="Effective Python Book"></p>
+		<a class="button" href="http://amzn.to/2e2EiJt" rel="nofollow">Get this book</a></div>
+</div>
+ </div>
+		</article>
+	</div>
+	<div class="title-conclusion">
+		<h4 class="autoscroll" id="conclusion">Final Words</h4>
+
+<p>Python is a terrific language. The syntax is simple and code length is short which makes is easy to understand and write.</p>
+
+<p>If you are getting started in programming, Python is an awesome choice. You will be amazed how much you can do in Python once you know the basics.</p>
+
+<p>It's easy to overlook the fact that Python is a powerful language. Not only is it good for learning programming, it's also a good language to have in your arsenal. Change your idea into a prototype or create games or get started with data Science, Python can help you in everything to get started.</p>
+	</div>
+  </div>
+</div>
+  </div>
+    </div>
+</section><iframe name="__cmpLocator" style="display: none;" src="./Learn Python (Programming Tutorial for Beginners)_files/saved_resource(2).html"></iframe><script type="text/javascript" id="">(function(c,a){if(!a.__SV){var b=window;try{var p,l,m=b.location,f=m.hash;var d=function(a,b){return(p=a.match(RegExp(b+"\x3d([^\x26]*)")))?p[1]:null};f&&d(f,"state")&&(l=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===l.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(l.desiredHash||"",c.title,m.pathname+m.search)))}catch(q){}var n,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,k){var a=k.split(".");2==a.length&&(b=b[a[0]],k=a[1]);b[k]=function(){b.push([k].concat(Array.prototype.slice.call(arguments,
+0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};n="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<n.length;h++)c(e,n[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(a){b[a]=function(){call2_args=arguments;call2=[a].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);mixpanel.init("1ce651f84a415437acf2394387a1f78e");</script>
+<footer id="footer">
+    <div class="clearfix footer-wrapper">
+                    <div class="footer-left">
+                  <div class="region region-footer-left">
+    <div id="block-block-170" class="block block-block">
+
+    
+  <div class="content">
+    <style>
+.footer-logo .play-store-banner {
+    margin-top: 30px;
+    background: url(/sites/all/themes/marketing/images/Play-store.png) no-repeat;
+    background-size: contain;
+    height: 40px;
+}
+
+.footer-logo .app-store-banner {
+    margin-top: 15px;
+    background: url(/sites/all/themes/marketing/images/App-store.svg) no-repeat;
+    background-size: contain;
+    height: 44px;
+}
+
+.footer-logo .play-store-banner, .footer-logo .app-store-banner {
+    width: 132px;
+    display: inline-block;
+    text-indent: -9999em;
+    margin-left: 8px;
+    display: block;
+}
+
+.footer-logo .play-store-banner:hover, .footer-logo .app-store-banner:hover {
+        border-color: #BBB;
+}
+
+</style>
+<div class="footer-logo">
+	<div><a href="https://www.programiz.com/" title="Programiz Logo"><img alt="" src="./Learn Python (Programming Tutorial for Beginners)_files/programiz-logo.png" width="60"></a></div>
+
+<a href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_source%3Dprogramiz-website%26utm_campaign%3Dprogramiz-footer" class="play-store-banner">Download learn Python app on Android.</a>
+<a href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8" class="app-store-banner">Download learn Python app on App Store.</a>
+</div>
+  </div>
+</div>
+  </div>
+            </div>
+                            <div class="footer-right">
+                  <div class="region region-footer-right">
+    <div id="block-block-87" class="block block-block">
+
+    
+  <div class="content">
+    <div class="footer-links"><span>tutorials</span>
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming" title="Python">Python Tutorials</a></li>
+		<li><a href="https://www.programiz.com/c-programming" title="C Programming">C Tutorials</a></li>
+		<li><a href="https://www.programiz.com/java-programming" title="Java">Java Tutorials</a></li>
+		<li><a href="https://www.programiz.com/kotlin-programming" title="Kotlin">Kotlin Tutorials</a></li>
+		<li><a href="https://www.programiz.com/cpp-programming" title="C++">C++ Tutorials</a></li>
+		<li><a href="https://www.programiz.com/swift-programming" title="Swift">Swift Tutorials</a></li>
+		<li><a href="https://www.programiz.com/r-programming" title="R Programming">R Tutorials</a></li>
+		<li><a href="https://www.programiz.com/dsa" title="Data Structures and Algorithms">DSA</a></li>
+	</ul>
+</div>
+
+<div class="footer-links"><span>examples</span>
+
+	<ul>
+		<li><a href="https://www.programiz.com/python-programming/examples" title="Python">Python Examples</a></li>
+		<li><a href="https://www.programiz.com/c-programming/examples" title="C Programming">C Examples</a></li>
+		<li><a href="https://www.programiz.com/java-programming/examples" title="Java">Java Examples</a></li>
+		<li><a href="https://www.programiz.com/kotlin-programming/examples" title="Kotlin">Kotlin Examples</a></li>
+		<li><a href="https://www.programiz.com/cpp-programming/examples" title="C++">C++ Examples</a></li>
+		<li><a href="https://www.programiz.com/r-programming/examples" title="R Programming">R Examples</a></li>
+	</ul>
+</div>
+
+<div class="footer-links"><span>company</span>
+
+	<ul>
+		<li><a href="https://www.programiz.com/about-us">About</a></li>
+		<li><a href="https://www.programiz.com/advertise">Advertising</a></li>
+		<li><a href="https://www.programiz.com/contact">Contact</a></li>
+	</ul>
+</div>
+
+<div class="footer-links"><span>legal</span>
+
+	<ul>
+		<li><a href="https://www.programiz.com/privacy-policy">Privacy Policy</a></li>
+		<li><a href="https://www.programiz.com/terms-of-use">Terms and Conditions</a></li>
+		<li><a href="https://www.programiz.com/app-privacy-policy">App's Privacy Policy</a></li>
+		<li><a href="https://www.programiz.com/app-toc">App's Terms and Conditions</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+  </div>
+            </div>
+            </div>
+    <div class="copyright">
+        Copyright © Parewa Labs Pvt. Ltd. All rights reserved.
+    </div>
+    
+</footer>
+  <script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_wMq06n34El81cPtKvKVuAehyOEwepE71d1W2gGcEjDE.js"></script>
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/js_ZPMVUwauT3CzfUSIYk-Kc3nwhp80i90VcKjYuHm5owQ.js"></script>
+
+
+
+<script type="text/javascript" src="./Learn Python (Programming Tutorial for Beginners)_files/script-41eb27f7cc.js" charset="utf-8"></script><iframe id="google_osd_static_frame_3251257703503" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Learn Python (Programming Tutorial for Beginners)_files/saved_resource(3).html"></iframe></body></html>

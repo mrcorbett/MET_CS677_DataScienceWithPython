@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://sebastianraschka.com/faq/docs/lda-vs-pca.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>What is the difference between LDA and PCA for dimensionality reduction?</title>
+    <meta name="description" content="This is the personal website of a data scientist and machine learning enthusiast with a big passion for Python and open source. Born and raised in Germany, now living in East Lansing, Michigan.
+">
+    <style class="anchorjs"></style><link rel="stylesheet" href="./What is the difference between LDA and PCA for dimensionality reduction__files/main.css">
+    <link rel="stylesheet" href="./What is the difference between LDA and PCA for dimensionality reduction__files/font-awesome.min.css">
+    <link rel="stylesheet" href="./What is the difference between LDA and PCA for dimensionality reduction__files/academicons.min.css">
+    <meta property="og:title" content="What is the difference between LDA and PCA for dimensionality reduction?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sebastianraschka.com/faq/docs/lda-vs-pca.html">
+
+
+  <meta property="og:image" content="">
+
+
+<meta property="og:description" content="Both LDA and PCA are linear transformation techniques: LDA is a supervised whereas PCA is unsupervised – PCA ignores class labels.
+">
+<meta property="og:site_name" content="Dr. Sebastian Raschka">
+<meta property="og:locale" content="en_US">
+
+    <meta property="article:published_time" content="2019-11-16T14:07:07-05:00">
+    <meta property="article:author" content="">
+    
+        <meta property="og:see_also" content="https://sebastianraschka.com/blog/2019/student-gallery-1.html">
+    
+        <meta property="og:see_also" content="https://sebastianraschka.com/blog/2018/model-evaluation-selection-part4.html">
+    
+        <meta property="og:see_also" content="https://sebastianraschka.com/blog/2018/semi-adversarial-nets-1.html">
+    
+
+
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+
+    <link rel="canonical" href="https://sebastianraschka.com/faq/docs/lda-vs-pca.html">
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+
+  <body><div id="MathJax_Message" style="display: none;"></div>
+    <header class="site-header">
+      <a class="site-title" href="https://sebastianraschka.com/" style="text-decoration: none; margin-top: 2em;">sebastian<span style="color:#c5050c">raschka</span></a>
+
+
+  <div class="wrapper">
+
+    <nav class="site-nav">
+      <a href="https://sebastianraschka.com/faq/docs/lda-vs-pca.html#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+        </svg>
+      </a>
+
+
+
+
+      <div class="trigger">
+      
+        <a class="page-link" href="https://sebastianraschka.com/about.html" style="color:#000000">About</a>
+        <a class="page-link" href="https://sebastianraschka.com/blog/index.html" style="color:#000000">Blog</a>
+        <a class="page-link" href="https://sebastianraschka.com/books.html" style="color:#000000">Books</a>
+        <a class="page-link" href="https://sebastianraschka.com/elsewhere.html" style="color:#000000">Elsewhere</a>
+        <a class="page-link" href="https://sebastianraschka.com/resources.html" style="color:#000000">Resources</a>         
+        <a class="page-link" href="http://pages.stat.wisc.edu/~sraschka/news/" style="color:#c5050c">News</a>   
+        <a class="page-link" href="http://pages.stat.wisc.edu/~sraschka/publications/" style="color:#c5050c">Publications</a>
+        <a class="page-link" href="http://pages.stat.wisc.edu/~sraschka/teaching" style="color:#c5050c">Teaching</a>
+        <a class="page-link" href="http://pages.stat.wisc.edu/~sraschka/software" style="color:#c5050c">Software</a>
+        <br>
+
+      </div>  
+
+
+    </nav>
+
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="Search FAQ">
+  <ul id="results-container"></ul>
+  </div>
+  
+  <!-- Script pointing to search-script.js -->
+  <script src="./What is the difference between LDA and PCA for dimensionality reduction__files/search-script.js" type="text/javascript"></script>
+  
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search-faq.json'
+  })
+  </script>
+
+<a href="https://sebastianraschka.com/faq/index.html"><i class="fa fa-arrow-circle-left"></i> Index</a>
+
+
+<script src="./What is the difference between LDA and PCA for dimensionality reduction__files/MathJax.js" id=""></script>
+
+<div class="post">
+
+  <header class="post-header">
+
+
+    <div class="search_form">
+        <div id="cse"></div>
+    </div>
+
+    <h1 class="post-title">Machine Learning FAQ</h1>
+
+    <h3 class="post-title" id="what-is-the-difference-between-lda-and-pca-for-dimensionality-re">What is the difference between LDA and PCA for dimensionality reduction?<a class="anchorjs-link " href="https://sebastianraschka.com/faq/docs/lda-vs-pca.html#what-is-the-difference-between-lda-and-pca-for-dimensionality-re" aria-label="Anchor link for: what is the difference between lda and pca for dimensionality re" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; padding-left: 0.375em;"></a></h3>
+
+
+  </header>
+
+  <article class="post-content">
+
+
+  
+    <p>Both LDA and PCA are linear transformation techniques: LDA is a supervised whereas PCA is unsupervised – PCA ignores class labels.</p>
+
+<p>We can picture PCA as a technique that finds the directions of maximal variance:</p>
+
+<p><img src="./What is the difference between LDA and PCA for dimensionality reduction__files/pca.png" alt=""></p>
+
+<p>In contrast to PCA, LDA attempts to find a feature subspace that maximizes class separability (note that LD 2 would be a very bad linear discriminant in the figure above).</p>
+
+<p><img src="./What is the difference between LDA and PCA for dimensionality reduction__files/lda.png" alt=""></p>
+
+<p>Remember that LDA makes assumptions about normally distributed classes and equal class covariances.
+If you are interested in an empirical comparison: A. M. Martinez and A. C. Kak. PCA versus LDA. Pattern Analysis and Machine Intelligence, IEEE Transactions on, 23(2):228–233, 2001). (PCA tends to result in better classification results in an image recognition task if the number of samples for a given class was relatively small.)</p>
+
+  </article>
+
+</div>
+
+<!--
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> google.load('search', '1',
+{language : 'en'}); google.setOnLoadCallback(function() {
+ var customSearchControl = new
+ google.search.CustomSearchControl('014864919068820376681:2w5agku2gwo');
+ customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+ var options = new google.search.DrawOptions();
+ options.setAutoComplete(true);
+ customSearchControl.draw('cse', options); }, true);
+</script>
+-->
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+
+
+    <div class="footer-col-wrapper">
+
+
+    <div class="footer-col  social-col">
+
+
+
+      
+          <a href="https://sebastianraschka.com/email.html"><span><i class="fa fa-envelope fa-2x"></i> </span></a>
+      
+
+      
+        <a href="https://twitter.com/rasbt"> <span><i class="fa fa-twitter fa-2x"></i> </span></a>
+      
+
+      
+            <a href="https://github.com/rasbt"><span><i class="fa fa-github fa-2x"></i> </span></a>
+      
+
+      
+          <a href="https://scholar.google.com/citations?user=X4RCC0IAAAAJ&amp;hl=enrasbt"><span><i class="ai ai-google-scholar ai-2x"></i> </span></a>
+      
+
+      
+          <a href="https://linkedin.com/in/sebastianraschka"><span><i class="fa fa-linkedin fa-2x"></i> </span></a>
+      
+
+      
+
+      
+        <a href="https://www.quora.com/profile/Sebastian-Raschka-1"><span class="fa fa-2x" style="font-family: Georgia, serif; margin-left:5px;"><strong>Q</strong></span></a>
+      
+
+  </div>
+
+    <div class="footer-col  copyright-col">
+      <p>© 2013-2019 Sebastian Raschka</p>
+    </div>
+
+
+  </div>
+
+
+
+</div></footer>
+
+  
+
+  <script src="./What is the difference between LDA and PCA for dimensionality reduction__files/anchor.min.js" type="text/javascript"></script>
+  <script>
+    var selector = 'h2, h3, h4, h5, h6';
+    /*
+    anchors.options = {
+      icon: '#',
+      visible: 'always',
+      placement: 'left',
+      class: 'bb-anchor'
+    }
+    */
+    anchors.add(selector);
+  </script>
+
+
+
+</body></html>
