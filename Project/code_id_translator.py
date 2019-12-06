@@ -41,10 +41,11 @@ class CodeIdTranslator():
         self.dfCodeTranslator = self.dfCodeTranslator.unstack(level=0)
         self.dfCodeTranslator = self.dfCodeTranslator.stack()
         self.state = 'code'
-
+        print(self.dfCodeTranslator)
+        
     def _transform(self, df, function, colName, newColName=None):
         '''
-        Transform a column in the dataframe (potentially into a new column_
+        Transform a column in the dataframe (potentially into a new column
         
         Args:
             df         (pd.DataFrame):  The dataframe to use.
