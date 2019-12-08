@@ -44,7 +44,7 @@ class CodeIdTranslator():
         self.dfCodeTranslator = self.dfCodeTranslator.unstack(level=0)
         self.dfCodeTranslator = self.dfCodeTranslator.stack()
         self.state = 'code'
-        print(self.dfCodeTranslator)
+        #print(self.dfCodeTranslator)
 
     def _transform(self, df, function, colName, newColName=None):
         '''
