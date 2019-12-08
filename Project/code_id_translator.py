@@ -1,3 +1,6 @@
+
+# File:  code_id_translator.py
+
 import numpy as np
 import pandas as pd
 
@@ -42,7 +45,7 @@ class CodeIdTranslator():
         self.dfCodeTranslator = self.dfCodeTranslator.stack()
         self.state = 'code'
         print(self.dfCodeTranslator)
-        
+
     def _transform(self, df, function, colName, newColName=None):
         '''
         Transform a column in the dataframe (potentially into a new column
@@ -119,6 +122,9 @@ class CodeIdTranslator():
         else:
             raise Exception('Invalid state={} for selected function={}'.format(self.state, function))
  
+    def getTranslator(self):
+        return self.dfCodeTranslator
+
     def __str__(self):
         '''
         Returns:
