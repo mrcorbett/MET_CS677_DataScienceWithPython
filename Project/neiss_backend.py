@@ -154,7 +154,7 @@ class Neiss:
     def translateAge(self, df):
         return [age if age < 200 else (age - 200)/12 for age in df['Age']]
 
-    def translateCodes(df):
+    def translateCodesToIds(df):
         return df.replace(Neiss.DICT_CATEGORY_TRANSLATOR)
 
 
